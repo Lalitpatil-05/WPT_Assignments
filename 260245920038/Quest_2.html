@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Change Link Example</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#btn").click(function(){
+        $("#mylink").attr("href","https://www.google.com");  
+        $("#mylink").text("Go to Google");                   
+    });
+});
+</script>
+
+</head>
+<body>
+
+<a id="mylink" href="https://www.wikipedia.com">Go to wikipedia</a>
+<br><br>
+
+<button id="btn">Change Link</button>
+
+</body>
+</html>

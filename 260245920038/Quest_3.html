@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Click and Double Click Example</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+    $("h2,p,button").click(function(){
+        alert("Single Click Event ");
+    });
+
+    $("h2,p,button").dblclick(function(){
+        alert("Double Click Event ");
+    });
+
+});
+</script>
+
+</head>
+<body>
+
+<h2>Welcome to IET institutes</h2>
+<p>Click or Double Click on any element.</p>
+<button>Test Button</button>
+
+</body>
+</html>
