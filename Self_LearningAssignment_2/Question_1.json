@@ -1,0 +1,42 @@
+[
+  {
+    "match": "IND vs AUS",
+    "team1": "India",
+    "team2": "Australia",
+    "score1": "180/5",
+    "score2": "150/7",
+    "result": "India won"
+  },
+  {
+    "match": "ENG vs SA",
+    "team1": "England",
+    "team2": "South Africa",
+    "score1": "200/6",
+    "score2": "180/8",
+    "result": "England won"
+  },
+  {
+    "match": "PAK vs NZ",
+    "team1": "Pakistan",
+    "team2": "New Zealand",
+    "score1": "170/8",
+    "score2": "165/9",
+    "result": "Pakistan won"
+  },
+  {
+    "match": "Aus vs Ind",
+    "team1": "Austrelia",
+    "team2": "India",
+    "score1": "170/8",
+    "score2": "165/9",
+    "result": "India won"
+  },
+  {
+    "match": "PAK vs Aus",
+    "team1": "Pakistan",
+    "team2": "Austrelia",
+    "score1": "170/8",
+    "score2": "165/9",
+    "result": "Austrelia won"
+  }
+]

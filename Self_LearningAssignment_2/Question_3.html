@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live News Headlines</title>
+
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<h1>Live News Headlines</h1>
+
+<button onclick="loadNews()">Load News</button>
+
+<ul id="newsList"></ul>
+
+<script>
+function loadNews() {
+
+    // axios.get("https://newsdata.io/api/1/latest") 
+    axios.get("Question_3.json") 
+        .then(function (response) {
+
+            let data = response.data.articles;
+            let output = "";
+
+            data.forEach(item => {
+                output += `<li>
+                    <b>${item.title}</b> - ${item.source}
+                </li>`;
+            });
+
+            document.getElementById("newsList").innerHTML = output;
+        })
+        .catch(function (error) {
+            console.log(error);
+            alert("Error loading news");
+        });
+}
+</script>
+
+</body>
+</html>

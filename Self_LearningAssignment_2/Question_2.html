@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Scoreboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 60%;
+            background-color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🏏 Live Scoreboard</h1>
+
+    <table id="scoreTable">
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Runs</th>
+                <th>Balls</th>
+                <th>Strike Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        function loadScore() {
+            var xhr = new XMLHttpRequest();
+
+            // Replace with your faculty-provided URL
+            var url = "score.json";
+
+            xhr.open("GET", url, true);
+
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    displayScore(data);
+                }
+            };
+
+            xhr.send();
+        }
+
+        function displayScore(data) {
+            var tbody = document.querySelector("#scoreTable tbody");
+            tbody.innerHTML = "";
+
+            data.players.forEach(function(player) {
+                var row = `
+                    <tr>
+                        <td>${player.name}</td>
+                        <td>${player.runs}</td>
+                        <td>${player.balls}</td>
+                        <td>${player.strikeRate}</td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+
+        // Load initially
+        loadScore();
+
+        // Refresh every 5 seconds (live update)
+        setInterval(loadScore, 5000);
+    </script>
+
+</body>
+</html>

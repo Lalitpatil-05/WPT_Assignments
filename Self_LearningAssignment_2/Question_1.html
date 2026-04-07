@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cricket Scoreboard</title>
+</head>
+<body>
+    <div style="display:flex; justify-content:center;">
+        <button onclick="loadData()">LOAD Cricket Data</button>
+    </div>
+    <div style="display:flex; justify-content:center;">
+<table border="1" >
+    <thead>
+        <tr>
+            <th>Match</th>
+            <th>Team 1</th>
+            <th>Team 2</th>
+            <th>Score 1</th>
+            <th>Score 2</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody id="body"></tbody>
+</table>
+</div>
+<script>
+function loadData() {
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "Question_1.json", true);
+
+    xhr.onreadystatechange = function () {
+
+        if (xhr.readyState === 4 && xhr.status === 200) {
+
+            var data = JSON.parse(xhr.responseText);
+
+            let rows = "";
+
+            data.forEach(item => {
+                rows += `<tr>
+                    <td>${item.match}</td>
+                    <td>${item.team1}</td>
+                    <td>${item.team2}</td>
+                    <td>${item.score1}</td>
+                    <td>${item.score2}</td>
+                    <td>${item.result}</td>
+                </tr>`;
+            });
+
+            document.getElementById("body").innerHTML = rows;
+        }
+    };
+
+    xhr.send();
+}
+</script>
+
+</body>
+</html>

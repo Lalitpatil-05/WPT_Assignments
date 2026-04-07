@@ -1,0 +1,7 @@
+{
+    "players": [
+        { "name": "Rohit Sharma", "runs": 45, "balls": 30, "strikeRate": 150 },
+        { "name": "Virat Kohli", "runs": 60, "balls": 42, "strikeRate": 142.8 },
+        { "name": "Hardik Pandya", "runs": 25, "balls": 15, "strikeRate": 166.6 }
+    ]
+}
